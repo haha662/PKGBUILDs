@@ -1,0 +1,42 @@
+# Maintainer: haha662 <haha662 at posteo dot net>
+
+pkgname=efb-telegram-master
+pkgver=2.2.4
+pkgrel=1
+pkgdesc="Telegram Master Channel for EH Forwarder Bot"
+arch=('any')
+url="https://github.com/ehForwarderBot/efb-telegram-master"
+license=('AGPL3')
+groups=('efb')
+depends=('ehforwarderbot>=2.0.0'
+         'python-telegram-bot>=13.4'
+         'python-magic-ahupp'
+         'python-ffmpeg'
+         'python-peewee'
+         'python-requests'
+         'python-pydub'
+         'python-ruamel-yaml'
+         'python-pillow'
+         'python-language-tags'
+         'python-retrying'
+         'python-bullet>=2.2.0'
+         'python-cjkwrap'
+         'python-humanize'
+         'python-typing_extensions>=3.7.4.1')
+makedepends=('python-setuptools')
+provides=("python-$pkgname")
+conflicts=("python-$pkgname")
+source=("https://github.com/ehForwarderBot/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('ab40c9c97656921ce339194af91ba56cdb6680fea9a2ec5016649b6205919f44')
+
+build() {
+    cd "$pkgname-$pkgver"
+
+    python setup.py build
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+
+    python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

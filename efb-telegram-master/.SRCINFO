@@ -1,0 +1,30 @@
+pkgbase = efb-telegram-master
+	pkgdesc = Telegram Master Channel for EH Forwarder Bot
+	pkgver = 2.2.4
+	pkgrel = 1
+	url = https://github.com/ehForwarderBot/efb-telegram-master
+	arch = any
+	groups = efb
+	license = AGPL3
+	makedepends = python-setuptools
+	depends = ehforwarderbot>=2.0.0
+	depends = python-telegram-bot>=13.4
+	depends = python-magic-ahupp
+	depends = python-ffmpeg
+	depends = python-peewee
+	depends = python-requests
+	depends = python-pydub
+	depends = python-ruamel-yaml
+	depends = python-pillow
+	depends = python-language-tags
+	depends = python-retrying
+	depends = python-bullet>=2.2.0
+	depends = python-cjkwrap
+	depends = python-humanize
+	depends = python-typing_extensions>=3.7.4.1
+	provides = python-efb-telegram-master
+	conflicts = python-efb-telegram-master
+	source = https://github.com/ehForwarderBot/efb-telegram-master/releases/download/v2.2.4/efb-telegram-master-2.2.4.tar.gz
+	sha256sums = ab40c9c97656921ce339194af91ba56cdb6680fea9a2ec5016649b6205919f44
+
+pkgname = efb-telegram-master
