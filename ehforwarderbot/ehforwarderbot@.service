@@ -1,0 +1,17 @@
+[Unit]
+Description=EH Forwarder Bot instance for profile %i
+Documentation=https://github.com/blueset/ehForwarderBot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+PrivateTmp=true
+User=efb
+Group=efb
+Environment=EFB_DATA_PATH=/var/lib/efb
+ExecStart=/usr/bin/ehforwarderbot --profile %i
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+Alias=efb@.service

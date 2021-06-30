@@ -1,0 +1,26 @@
+pkgbase = ehforwarderbot
+	pkgdesc = An extensible message tunneling chat bot framework which delivers messages to and from multiple platforms and remotely control your accounts.
+	pkgver = 2.1.1
+	pkgrel = 1
+	url = https://github.com/ehForwarderBot/ehForwarderBot
+	install = ehforwarderbot.install
+	arch = any
+	groups = efb
+	license = AGPL3
+	makedepends = python-setuptools
+	depends = python-ruamel-yaml
+	depends = python-bullet
+	depends = python-cjkwrap
+	depends = python-typing_extensions
+	provides = python-ehforwarderbot
+	conflicts = python-ehforwarderbot
+	source = https://github.com/ehForwarderBot/ehForwarderBot/releases/download/v2.1.1/ehforwarderbot-2.1.1.tar.gz
+	source = ehforwarderbot@.service
+	source = ehforwarderbot.sysusers
+	source = ehforwarderbot.tmpfiles
+	sha256sums = 414c3de4e9ad151d3ad38d37d89f0b626a5fa7fb04d9d30ff152b5230d34099b
+	sha256sums = dc8cfba0962b0df47b2d7b9373496dff080be8aa3f5a2cdb905605511c94ef2f
+	sha256sums = b1ab420077604fec6cc9b9cd8b040eefa864e5727aa87c94a45a18a6b28712c3
+	sha256sums = 8979109bf8bdf6c36df12f557b8fcdacf6786fab2b0fcb5ef66d5ff8a02b6afa
+
+pkgname = ehforwarderbot

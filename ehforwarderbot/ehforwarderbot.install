@@ -1,0 +1,7 @@
+post_install() {
+    echo "The system-wide configuration files are located in /var/lib/efb owned by user efb."
+    echo "If you want to use efb-wizard to generate system-wide configuration, you can use something like"
+    echo "    \$ sudo -u efb EFB_DATA_PATH=/var/lib/efb efb-wizard"
+    echo "to set the environment variable EFB_DATA_PATH=/var/lib/efb and run as user efb."
+    echo "The part after @ in systemd service's name specifies the profile name instead of the user running the service."
+}

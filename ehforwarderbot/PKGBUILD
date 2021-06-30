@@ -1,0 +1,42 @@
+# Maintainer: haha662 <haha662 at posteo dot net>
+
+pkgname=ehforwarderbot
+pkgver=2.1.1
+pkgrel=1
+pkgdesc="An extensible message tunneling chat bot framework which delivers messages to and from multiple platforms and remotely control your accounts."
+arch=('any')
+url="https://github.com/ehForwarderBot/ehForwarderBot"
+license=('AGPL3')
+groups=('efb')
+depends=('python-ruamel-yaml'
+         'python-bullet'
+         'python-cjkwrap'
+         'python-typing_extensions')
+makedepends=('python-setuptools')
+provides=("python-$pkgname")
+conflicts=("python-$pkgname")
+install=ehforwarderbot.install
+source=("https://github.com/ehForwarderBot/ehForwarderBot/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz"
+        "ehforwarderbot@.service"
+        "ehforwarderbot.sysusers"
+        "ehforwarderbot.tmpfiles")
+sha256sums=('414c3de4e9ad151d3ad38d37d89f0b626a5fa7fb04d9d30ff152b5230d34099b'
+            'dc8cfba0962b0df47b2d7b9373496dff080be8aa3f5a2cdb905605511c94ef2f'
+            'b1ab420077604fec6cc9b9cd8b040eefa864e5727aa87c94a45a18a6b28712c3'
+            '8979109bf8bdf6c36df12f557b8fcdacf6786fab2b0fcb5ef66d5ff8a02b6afa')
+
+build() {
+    cd "$pkgname-$pkgver"
+
+    python setup.py build
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+
+    python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+    install -Dm644 "$srcdir/ehforwarderbot@.service" "$pkgdir/usr/lib/systemd/system/ehforwarderbot@.service"
+    install -Dm644 "$srcdir/$pkgname.sysusers" "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
+    install -Dm644 "$srcdir/$pkgname.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
+}
