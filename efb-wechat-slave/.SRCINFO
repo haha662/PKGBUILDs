@@ -1,0 +1,25 @@
+pkgbase = efb-wechat-slave
+	pkgdesc = WeChat Slave Channel for EH Forwarder Bot
+	pkgver = 2.0.5
+	pkgrel = 1
+	url = https://github.com/ehForwarderBot/efb-wechat-slave
+	arch = any
+	groups = efb
+	license = AGPL3
+	makedepends = python-setuptools
+	depends = ehforwarderbot>=2.0.0
+	depends = python-magic-ahupp
+	depends = python-pillow
+	depends = python-pyqrcode
+	depends = python-pypng
+	depends = python-yaml>=5.3
+	depends = python-requests>=2.22.0
+	depends = python-typing_extensions
+	depends = python-bullet
+	depends = python-cjkwrap
+	provides = python-efb-wechat-slave
+	conflicts = python-efb-wechat-slave
+	source = https://github.com/ehForwarderBot/efb-wechat-slave/releases/download/v2.0.5/efb-wechat-slave-2.0.5.tar.gz
+	sha256sums = 404881d8bc14d457087c1f159b418135aa46d7cb27f85dad1391daedd417197b
+
+pkgname = efb-wechat-slave
