@@ -4,4 +4,4 @@ PKGBUILDs I maintain.
 
 ## License
 
-All files in this repository all licensed under CC0, refer to `LICENSE` for more information.
+All files in this repository are licensed under CC0, refer to `LICENSE` for more information.
